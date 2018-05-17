@@ -1,0 +1,22 @@
+<table>
+	<tr>
+		<td>Date</td>
+		<td>Open</td>
+		<td>High</td>
+		<td>Low</td>
+		<td>Close</td>
+	</tr>
+	{{range $stock := .Stock}}
+	<tr>
+		<td>{{$stock.DateStr}}</td>
+		<td>{{$stock.Open}}</td>
+		<td>{{$stock.High}}</td>
+		<td>{{$stock.Low}}</td>
+		<td>{{$stock.Close}}</td>
+	</tr>
+    {{end}}
+
+</table>
+<a href="/stock/new">New Stock</a>
+<a href="/stock/calculate">Calculate</a>
+<a href="/stock/export">Export data</a>

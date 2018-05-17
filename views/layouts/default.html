@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+  <div class="page animsition">
+
+	  {{if .flash}}
+		  <div class="page-content page-alert">
+		    {{if .flash.notice}}
+		    <div class="alert alert-success alert-dismissible" role="alert">
+		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		        <span aria-hidden="true">×</span>
+		      </button>
+		      {{.flash.notice}}
+		    </div>
+		    {{end}}
+
+		    {{if .flash.error}}
+		    <div class="alert alert-danger alert-dismissible" role="alert">
+		      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		        <span aria-hidden="true">×</span>
+		      </button>
+		      {{.flash.error}}
+		    </div>
+		    {{end}}    
+		  </div>
+	  {{end}}
+	    
+	  {{.LayoutContent}}
+  </div>
+</body>
+</html>

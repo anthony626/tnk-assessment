@@ -1,0 +1,37 @@
+{{ if .isValid }}
+{{ else }}
+<div class="summary-errors alert alert-danger alert-dismissible">
+    <p>Errors list below: </p>
+    <ul>
+        {{ range $key, $value := .Errors }}
+        	<li><strong> {{ $value }}</strong></li>
+        {{ end }}          
+    </ul>
+</div>
+{{ end }}
+
+<form action="/stock/new" method="POST">
+	<div>
+		Date: <input type="text" name="date" class="datepicker" placeholder="mm/dd/yyyy" />$
+	</div>
+
+	<div>
+		Open: <input type="text" name="open"/>$
+	</div>
+
+	<div>
+		High: <input type="text" name="high"/>$
+	</div>
+
+	<div>
+		Low: <input type="text" name="low"/>$
+	</div>
+
+	<div>
+		Close: <input type="text" name="close"/>$
+	</div>
+
+	<div>
+		<button type="submit">Add</button>
+	</div>
+</form>

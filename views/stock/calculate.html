@@ -1,0 +1,25 @@
+<table>
+	<tr>
+		<td>Date</td>
+		<td>Open</td>
+		<td>High</td>
+		<td>Low</td>
+		<td>Close</td>
+		<td>Action</td>
+	</tr>
+	{{range $stock := .Stock}}
+	<tr>
+		<td>{{$stock.DateStr}}</td>
+		<td>{{$stock.Open}}</td>
+		<td>{{$stock.High}}</td>
+		<td>{{$stock.Low}}</td>
+		<td>{{$stock.Close}}</td>
+		<td>{{$stock.Action}}</td>
+	</tr>
+    {{end}}
+
+    <a href="/stock/new">New Stock</a>
+
+    <p>Best buy on: {{.BuyDate}}</p>
+    <p>Best sell on: {{.SellDate}}</p>
+</table>
